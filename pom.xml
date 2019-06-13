@@ -40,9 +40,7 @@
     </build>
 
     <scm>
-<!--        <connection>scm:git:git@github.com:danielbyun/sfg-pet-clinic.git</connection>-->
         <developerConnection>scm:git:git@github.com:danielbyun/sfg-pet-clinic.git</developerConnection>
-<!--        <url>https://github.com/danielbyun/sfg-pet-clinic.git</url>-->
         <tag>HEAD</tag>
     </scm>
 
