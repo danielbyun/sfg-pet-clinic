@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+<html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'home')}" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,8 +7,7 @@
         <title>List of Pet Owners</title>
     </head>
     <body>
-        <h1 th:text="'List of Pet Owners'"></h1>
-
+        <h2 th:text="'List of Pet Owners'"></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
