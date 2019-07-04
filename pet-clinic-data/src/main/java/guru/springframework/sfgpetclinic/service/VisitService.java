@@ -4,7 +4,7 @@ import guru.springframework.sfgpetclinic.model.Visit;
 
 import java.util.Set;
 
-public interface VisitService {
+public interface VisitService extends CrudService<Visit, Long> {
     Visit findById(Long id);
 
     Visit save(Visit visit);

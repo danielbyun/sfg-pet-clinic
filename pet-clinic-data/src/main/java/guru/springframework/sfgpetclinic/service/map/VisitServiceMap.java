@@ -25,4 +25,14 @@ public class VisitServiceMap extends AbstractMapService<Visit, Long> implements 
     public Set<Visit> findAll() {
         return super.findAll();
     }
+
+    @Override
+    public void deleteById(Long id) {
+        super.deleteById(id);
+    }
+
+    @Override
+    public void delete(Visit object) {
+        super.delete(object);
+    }
 }

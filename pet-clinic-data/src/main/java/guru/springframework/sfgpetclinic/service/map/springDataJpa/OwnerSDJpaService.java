@@ -42,6 +42,16 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
+    public void delete(Owner object) {
+        ownerRepository.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        ownerRepository.deleteById(aLong);
+    }
+
+    @Override
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
         ownerRepository.findAll().forEach(owners::add);

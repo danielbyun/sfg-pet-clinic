@@ -29,6 +29,16 @@ public class PetSDJpaService implements PetService {
     }
 
     @Override
+    public void delete(Pet object) {
+        petRepository.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        petRepository.deleteById(aLong);
+    }
+
+    @Override
     public Set<Pet> findAll() {
         Set<Pet> pets = new HashSet<>();
         petRepository.findAll().forEach(pets::add);
