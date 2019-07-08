@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: guru.springframework.sfgpetclinic.service.map.springDataJpa.OwnerSDJpaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.02 s <<< FAILURE! - in guru.springframework.sfgpetclinic.service.map.springDataJpa.OwnerSDJpaServiceTest
+delete  Time elapsed: 0.01 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
+findAll  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
+findById  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
+save  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
+findByLastName  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
+deleteById  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoSuchMethodError: org.mockito.internal.configuration.plugins.Plugins.getMockitoLogger()Lorg/mockito/plugins/MockitoLogger;
+
