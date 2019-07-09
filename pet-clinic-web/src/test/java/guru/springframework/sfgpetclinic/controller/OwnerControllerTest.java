@@ -23,14 +23,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
     @Mock
-    OwnerService ownerService;
+    private OwnerService ownerService;
 
     @InjectMocks
-    OwnerController controller;
+    private OwnerController controller;
 
-    Set<Owner> owners;
+    private Set<Owner> owners;
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {
