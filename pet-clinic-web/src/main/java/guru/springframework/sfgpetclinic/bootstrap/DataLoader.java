@@ -2,34 +2,28 @@ package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.service.*;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
-public class DataLoader implements CommandLineRunner {
-    private final OwnerService ownerService;
+public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     private final VetService vetService;
+    private final PetService petService;
+    private final OwnerService ownerService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
-        this.ownerService = ownerService;
+    public DataLoader(VetService vetService, PetService petService, OwnerService ownerService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.vetService = vetService;
+        this.petService = petService;
+        this.ownerService = ownerService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
         this.visitService = visitService;
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        int count = petTypeService.findAll().size();
-
-        if (count == 0) {
-            loadData();
-        }
     }
 
     private void loadData() {
@@ -109,5 +103,14 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
+    }
+
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        int count = petTypeService.findAll().size();
+
+        if (count == 0) {
+            loadData();
+        }
     }
 }
