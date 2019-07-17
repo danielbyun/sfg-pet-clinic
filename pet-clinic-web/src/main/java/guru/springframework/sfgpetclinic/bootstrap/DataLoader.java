@@ -2,14 +2,13 @@ package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.service.*;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
-public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetService petService;
     private final OwnerService ownerService;
@@ -17,7 +16,8 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
 
-    public DataLoader(VetService vetService, PetService petService, OwnerService ownerService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
+    public DataLoader(VetService vetService, PetService petService, OwnerService ownerService,
+                      PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.vetService = vetService;
         this.petService = petService;
         this.ownerService = ownerService;
@@ -106,7 +106,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent event) {
+    public void run(String... args) throws Exception {
         int count = petTypeService.findAll().size();
 
         if (count == 0) {
